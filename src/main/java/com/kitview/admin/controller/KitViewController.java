@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class KitViewController {
     @ResponseBody()
-    @RequestMapping(value = "/getFestival",method = RequestMethod.GET  , produces = "application/json;charset=UTF-8")
-    public String getFestival(){
+    @RequestMapping(value = "/getHoliday",method = RequestMethod.GET  , produces = "application/json;charset=UTF-8")
+    public String getHoliday(){
         //w开头的表示上班日，日历上显示一个“班”字，其他是休息日，日历上显示是“休”字
         return "[\n" +
                 "    {\n" +
@@ -134,8 +134,8 @@ public class KitViewController {
     }
 
     @ResponseBody()
-    @RequestMapping(value = "/getHoliday")
-    public String getHoliday(){
+    @RequestMapping(value = "/getFestival")
+    public String getFestival(){
         //H开头表示比较出名的节日，在日历上将会显示的节日；N开头表示农历节日，优先级最高；L开头表示存在的节日，当时并不出名，日历上不会显示，但会记录在客户端的dateInfo里面
         return "{\n" +
                 "  \"H0101\": \"元旦\",\n" +
